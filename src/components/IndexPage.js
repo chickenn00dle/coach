@@ -1,12 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import WorkoutList from './index/WorkoutList';
 import Button from './common/Button';
 
-const IndexPage = () => (
+const mapStateToProps = (state, ownProps) => {
+    return {
+        workouts: state.workouts
+    }
+}
+
+const IndexPage = props => (
     <div>
-        <h2>Let's Get Started</h2>
-        <p>
-            Select from the list of workout below:
-        </p>
+        <WorkoutList
+            workouts={ props.workouts }
+        />
         <Button
             to='/customize'
             text='Customize'
@@ -14,4 +21,4 @@ const IndexPage = () => (
     </div>
 );
 
-export default IndexPage;
+export default connect(mapStateToProps)(IndexPage);
