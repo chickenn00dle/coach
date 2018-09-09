@@ -13,7 +13,7 @@ class App extends Component {
             <h1>Fitness Coach</h1>
             <Switch>
                 <Route exact path='/' component={ IndexPage } />
-                <Route path='/preview' component={ PreviewPage } />
+                <Route path='/preview/:id' component={ PreviewPage } />
                 <Route path='/customize' component={ CustomizePage } />
                 <Route path='/share' component={ SharePage } />
                 <Route path='/workout' component={ WorkoutPage } />
