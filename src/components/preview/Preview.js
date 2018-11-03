@@ -6,6 +6,7 @@ const Preview = ({ workout }) => {
     return (
         <div>
             <h2>{ workout.workoutTitle }</h2>
+            <p><a href="{ workout.exampleURL }" target="_blank">Video</a></p>
             <p>{ workout.description }</p>
         </div>
     )
