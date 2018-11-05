@@ -1,3 +1,4 @@
 export default {
-    workouts: []
+    workouts: [],
+    query: 'banana'
 }
