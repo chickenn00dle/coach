@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import SearchBar from './index/Search';
 import WorkoutList from './index/WorkoutList';
 import Button from './common/Button';
-import updateQuery from '../actions/SearchActions'; 
+import updateSearchQuery from '../actions/SearchActions'; 
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = ( dispatch, ownProps ) => ({
-    onChange: text => { dispatch ( updateQuery ( text ) )}
+    onChange: text => { dispatch ( updateSearchQuery ( text ) )}
 })
 
 const IndexPage = props => (
