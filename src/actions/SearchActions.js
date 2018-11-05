@@ -1,8 +1,8 @@
 import { UPDATE_QUERY_STRING } from './Actions';
 
-const updateQuery = text => ({
+const updateSearchQuery = text => ({
     type: UPDATE_QUERY_STRING,
     text
 });
 
-export default updateQuery;
+export default updateSearchQuery;
