@@ -5,10 +5,16 @@ import WorkoutList from './index/WorkoutList';
 import Button from './common/Button';
 import updateSearchQuery from '../actions/SearchActions'; 
 
+const filterWorkouts = ( allWorkouts, searchQuery ) => {
+    if ( searchQuery.trim().length > 0 ) {
+        return allWorkouts.filter( workout => workout.workoutTitle.toLowerCase().includes( searchQuery.trim().toLowerCase() ) )
+    }
+    return allWorkouts
+}
+
 const mapStateToProps = (state, ownProps) => {
     return {
-        workouts: state.workouts,
-        query: state.query
+        workouts: filterWorkouts(state.workouts, state.query)
     }
 }
 
@@ -31,5 +37,6 @@ const IndexPage = props => (
         />
     </div>
 );
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);

@@ -14,12 +14,12 @@ const mapStateToProps = (state, ownProps) => {
 
 const PreviewPage = props => (
     <div>
-        <Preview
-            workout={ props.workout }
-        />
         <Button
             to='/'
-            text='Back'
+            text='<<<'
+        />
+        <Preview
+            workout={ props.workout }
         />
     </div>
 );
