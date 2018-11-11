@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import SearchBar from './index/Search';
 import Select from './index/Select';
 import WorkoutList from './index/WorkoutList';
-import Button from './common/Button';
 import { filterTypes } from '../actions/Actions';
 import updateSearchQuery from '../actions/SearchActions'; 
 

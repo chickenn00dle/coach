@@ -1,22 +1,25 @@
 import React from 'react';
 import marked from 'marked';
 
-export const Markdown = ({ text }) => {
-//    const convertedText = convertMarkdown(text);
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  sanitize: true,
+}) 
+
+const Markdown = ({ text }) => {
+    const convertedText = convertMarkdown( text );
     return (
         <div>
-            { text }
+            <span dangerouslySetInnerHTML={ convertedText } />
         </div>
     )
 }
 
-const convertMarkdown = ( text ) => {
-    console.log('marked text', text);
-    const converted = marked(text,{
-        sanitize: true,
-    });
+const convertMarkdown = text => {
+    const converted = marked( text )
     return {
         __html: converted
     }
 }
 
+export default Markdown

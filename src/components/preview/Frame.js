@@ -1,12 +1,15 @@
 import React from 'react'
 
-export const Frame = ({ exampleURL }) => {
+export const Frame = ({ title, exampleURL }) => {
     return (
-        <iframe
-            src={ exampleURL }
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-        ></iframe>
+        <div>
+            <iframe
+                title={ title }
+                src={ exampleURL }
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            ></iframe>
+        </div>
     )
 }

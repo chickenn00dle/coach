@@ -3,23 +3,22 @@ import { connect } from 'react-redux';
 import Button from './common/Button';
 import Preview from './preview/Preview';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = ( state, ownProps ) => {
+    console.log(state)
     const ID = parseInt(ownProps.match.params.id, 10);
-    const filtered = state.workouts.filter( workout => workout.id === ID);
-    const preview = filtered.length > 0 ? filtered[0] : {}; 
     return {
-        workout: preview
+        workout: state.workouts.find( workout => parseInt(workout.id, 10) === parseInt(ID, 10))
     }
 }
 
-const PreviewPage = props => (
+const PreviewPage = ({ workout }) => (
     <div>
         <Button
             to='/'
             text='<<<'
         />
         <Preview
-            workout={ props.workout }
+            workout={ workout }
         />
     </div>
 );
