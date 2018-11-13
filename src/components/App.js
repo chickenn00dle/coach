@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import IndexPage from './IndexPage';
-import PreviewPage from './PreviewPage';
-import CustomizePage from './CustomizePage';
-import SharePage from './SharePage';
-import WorkoutPage from './WorkoutPage';
+import React, { Component } from 'react'
+import { Switch, Route } from 'react-router-dom'
+import IndexContainer from './containers/IndexContainer'
+import WorkoutContainer from './containers/WorkoutContainer'
+import CustomizeContainer from './containers/CustomizeContainer'
+import ShareContainer from './containers/ShareContainer'
+import RoutineContainer from './containers/RoutineContainer'
 
 class App extends Component {
   render() {
     return (
         <div>
-            <h1>Fitness Coach</h1>
+            <h1>{ process.env.REACT_APP_NAME }</h1>
             <Switch>
-                <Route exact path='/' component={ IndexPage } />
-                <Route path='/preview/:id' component={ PreviewPage } />
-                <Route path='/customize' component={ CustomizePage } />
-                <Route path='/share' component={ SharePage } />
-                <Route path='/workout' component={ WorkoutPage } />
+                <Route exact path='/' component={ IndexContainer } />
+                <Route path='/workout/:id' component={ WorkoutContainer } />
+                <Route path='/customize' component={ CustomizeContainer } />
+                <Route path='/share' component={ ShareContainer } />
+                <Route path='/routine' component={ RoutineContainer } />
             </Switch>
         </div>
     );

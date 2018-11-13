@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Button = props => (
-    <Link to={ props.to }>
-        { props.text }
+const Button = ({ to, text }) => (
+    <Link to={ to }>
+        { text }
     </Link>
 );
 
-export default Button;
+export default Button

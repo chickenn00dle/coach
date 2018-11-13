@@ -1,14 +1,16 @@
-import * as types from '../actions/Actions';
-import initialState from './initialState';
+import { FETCH_WORKOUTS_SUCCESS } from '../actions/Actions'
+import InitialState from './InitialState'
 
-export default function FetchReducer(
-    state = initialState.workouts,
+const FetchReducer = (
+    state = InitialState.workouts,
     action
-) {
-    switch(action.type) {
-        case types.FETCH_WORKOUTS_SUCCESS:
-            return action.workouts;
+) => {
+    switch( action.type ) {
+        case FETCH_WORKOUTS_SUCCESS:
+            return action.workouts
         default:
-            return state;
+            return state
     }
 }
+
+export default FetchReducer

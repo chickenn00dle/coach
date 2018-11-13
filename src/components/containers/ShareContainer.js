@@ -1,7 +1,7 @@
-import React from 'react';
-import Button from './common/Button';
+import React from 'react'
+import Button from '../common/Button'
 
-const SharePage = () => (
+const ShareContainer = () => (
     <div>
         <h2>Here is your Share Link</h2>
         <p>A page just for share links will go here.</p>
@@ -10,6 +10,6 @@ const SharePage = () => (
             text='Start Over'
         />
     </div>
-);
+)
 
-export default SharePage;
+export default ShareContainer

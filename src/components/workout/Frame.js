@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Frame = ({ title, exampleURL }) => {
+const Frame = ({ title, exampleURL }) => {
     return (
         <div>
             <iframe
@@ -13,3 +13,5 @@ export const Frame = ({ title, exampleURL }) => {
         </div>
     )
 }
+
+export default Frame

@@ -1,14 +1,16 @@
-import { UPDATE_QUERY_STRING } from '../actions/Actions';
-import initialState from './initialState';
+import { UPDATE_QUERY_STRING } from '../actions/Actions'
+import InitialState from './InitialState'
 
-export default function SearchReducer (
-    state = initialState.query,
+const SearchReducer = (
+    state = InitialState.query,
     action
-) {
+) => {
     switch ( action.type ) {
         case UPDATE_QUERY_STRING:
-            return action.text;
+            return action.text
         default:
-            return state;
+            return state
     }
 }
+
+export default SearchReducer;

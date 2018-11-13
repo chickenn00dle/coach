@@ -1,8 +1,8 @@
-import React from 'react';
-import { Frame } from './Frame';
-import Markdown from './Markdown';
+import React from 'react'
+import Frame from './Frame'
+import Markdown from './Markdown'
 
-const Preview = ({ workout }) => {
+const Workout = ({ workout }) => {
     return (
         <div>
             <h2>{ workout.workoutTitle }</h2>
@@ -15,4 +15,4 @@ const Preview = ({ workout }) => {
     )
 }
 
-export default Preview;
+export default Workout 

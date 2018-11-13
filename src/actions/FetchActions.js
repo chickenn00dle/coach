@@ -1,24 +1,24 @@
-import api from '../Contentful';
-import * as types from './Actions';
+import api from '../contentful'
+import { FETCH_WORKOUTS_SUCCESS } from './Actions'
 
-export const fetchWorkouts = () => {
+export const FetchWorkouts = () => {
     return dispatch => {
         return api.getEntries({
             content_type: 'workout'
-        }).then(workouts => {
-                dispatch(fetchWorkoutsSuccess(workouts.items.map(
+        }).then( workouts => {
+                dispatch( FetchWorkoutsSuccess( workouts.items.map(
                     item => item.fields 
-                )));
+                )))
             })
-            .catch(err => {
-                throw(err)
-            });
+            .catch( err => {
+                throw( err )
+            })
     }
 }
 
-export const fetchWorkoutsSuccess = workouts => {
+export const FetchWorkoutsSuccess = workouts => {
     return { 
-        type: types.FETCH_WORKOUTS_SUCCESS,
+        type: FETCH_WORKOUTS_SUCCESS,
         workouts
     }
 }
