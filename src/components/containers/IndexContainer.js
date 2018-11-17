@@ -5,6 +5,8 @@ import Select from '../index/Select'
 import WorkoutIndex from '../index/WorkoutIndex'
 import { filterTypes } from '../../actions/Actions'
 import UpdateSearchQuery from '../../actions/SearchActions'
+import Grid from '@material-ui/core/Grid'
+import IndexAppBar from '../index/IndexAppBar'
 
 // Helper function. Search array for specific string value
 const searchForString = ( array, string ) => {
@@ -36,19 +38,19 @@ const mapDispatchToProps = ( dispatch ) => ({
 })
 
 const IndexContainer = props => (
-    <div>
+    <Grid 
+        container
+        direction="column"
+    >
+        <IndexAppBar title={ process.env.REACT_APP_NAME } />
         <Search
             query={ props.query }
             onChange={ props.onChange }
         />
-        <Select 
-            filter={ props.filter }
-        />
-        <WorkoutIndex
-            workouts={ props.workouts }
-        />
-    </div>
-);
+        <Select filter={ props.filter } />
+        <WorkoutIndex workouts={ props.workouts } />
+    </Grid>
+)
 
 
 export default connect( mapStateToProps, mapDispatchToProps )( IndexContainer )
