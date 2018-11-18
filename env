@@ -1,0 +1,9 @@
+# App environment variables
+# Rename this file .env
+
+# App Title
+REACT_APP_NAME=
+
+# Contentful Space ID and Access Token
+REACT_APP_SPACE_ID=
+REACT_APP_ACCESS_TOKEN=
