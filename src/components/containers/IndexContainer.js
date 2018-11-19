@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Select from '../index/Select'
 import WorkoutIndex from '../index/WorkoutIndex'
 import { filterTypes } from '../../actions/Actions'
+import SetFilterType from '../../actions/FilterTypeActions'
 import UpdateSearchQuery from '../../actions/SearchActions'
 import IndexAppBar from '../index/IndexAppBar'
+import IndexFilter from '../index/IndexFilter'
 
 // Helper function. Search array for specific string value
 const searchForString = ( array, string ) => {
@@ -32,7 +33,8 @@ const mapStateToProps = ( state ) => {
 }
 
 const mapDispatchToProps = ( dispatch ) => ({
-    onChange: text => { dispatch ( UpdateSearchQuery ( text ) )}
+    onChange: text => dispatch ( UpdateSearchQuery ( text ) ),
+    onSelect: event => dispatch( SetFilterType ( event.target.value ) )
 })
 
 const IndexContainer = ({ classes, ...props }) => (
@@ -41,8 +43,9 @@ const IndexContainer = ({ classes, ...props }) => (
             title={ process.env.REACT_APP_NAME }
             query={ props.query }
             onChange={ props.onChange }
+            filter={ props.filter } 
+            onSelect={ props.onSelect } 
         />
-        <Select filter={ props.filter } />
         <WorkoutIndex workouts={ props.workouts } />
     </div>
 )
