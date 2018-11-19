@@ -47,14 +47,20 @@ const styles = theme => ({
     },
 })
 
-const IndexSearch = ({ query, onChange, classes }) => {
+const IndexSearch = ({ 
+    query, 
+    filter,
+    onChange, 
+    classes 
+}) => { 
+    const placeholder = filter == 'WORKOUT_TITLE' ? 'Workout Title' : 'Body Part'
     return (
         <div className={ classes.searchBar }>
             <div className={ classes.searchIcon }>
                 <SearchIcon />
             </div>
             <InputBase
-                placeholder="Search"
+                placeholder={ placeholder }
                 type="text" 
                 value={ query } 
                 onChange={ (e) => onChange( e.target.value ) }

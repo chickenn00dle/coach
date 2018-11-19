@@ -40,6 +40,7 @@ const IndexAppBar = ({
             <div className={ classes.grow } />
             <IndexSearch 
                 query={ query }
+                filter={ filter }
                 onChange={ onChange }
             />
             <IndexFilter
