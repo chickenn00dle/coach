@@ -8,3 +8,5 @@ export const filterTypes = {
     WORKOUT_TITLE: 'WORKOUT_TITLE',
     BODY_PART: 'BODY_PART',
 }
+
+export const SET_ANCHOR = 'SET_ANCHOR'

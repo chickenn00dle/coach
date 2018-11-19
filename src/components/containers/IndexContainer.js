@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import WorkoutIndex from '../index/WorkoutIndex'
 import { filterTypes } from '../../actions/Actions'
 import SetFilterType from '../../actions/FilterTypeActions'
+import SetAnchor from '../../actions/AnchorActions'
 import UpdateSearchQuery from '../../actions/SearchActions'
 import IndexAppBar from '../index/IndexAppBar'
-import IndexFilter from '../index/IndexFilter'
 
 // Helper function. Search array for specific string value
 const searchForString = ( array, string ) => {
@@ -29,12 +29,15 @@ const mapStateToProps = ( state ) => {
     return {
         workouts: filterWorkouts(state.workouts, state.query, state.filter),
         filter: state.filter,
+        anchor: state.anchor,
     }
 }
 
 const mapDispatchToProps = ( dispatch ) => ({
     onChange: text => dispatch ( UpdateSearchQuery ( text ) ),
-    onSelect: event => dispatch( SetFilterType ( event.target.value ) )
+    onClick: item => dispatch( SetFilterType ( item ) ),
+    handleOpen: event => dispatch( SetAnchor ( event.currentTarget ) ),
+    handleClose: () => dispatch( SetAnchor ( null ) ),
 })
 
 const IndexContainer = ({ classes, ...props }) => (
@@ -42,9 +45,12 @@ const IndexContainer = ({ classes, ...props }) => (
         <IndexAppBar 
             title={ process.env.REACT_APP_NAME }
             query={ props.query }
-            onChange={ props.onChange }
             filter={ props.filter } 
-            onSelect={ props.onSelect } 
+            anchor={ props.anchor }
+            onChange={ props.onChange }
+            onClick={ props.onClick }
+            handleOpen={ props.handleOpen }
+            handleClose={ props.handleClose }
         />
         <WorkoutIndex workouts={ props.workouts } />
     </div>

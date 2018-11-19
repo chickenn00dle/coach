@@ -1,29 +1,47 @@
 import React from 'react'
 import { filterTypes } from '../../actions/Actions'
 import { withStyles } from '@material-ui/core/styles'
-import FormControl from '@material-ui/core/FormControl'
-import NativeSelect from '@material-ui/core/NativeSelect'
+import IconButton from '@material-ui/core/IconButton'
+import FilterList from '@material-ui/icons/FilterList'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
 
 const styles = theme => ({
     root: {
         width: 'auto',
-        marginRight: theme.spacing.unit * 3,
-        borderBottom: 'none',
     }
 })
 
-const IndexFilter = ({ filter, onSelect, classes }) => {
+const IndexFilter = ({ 
+    filter, 
+    anchor, 
+    onClick, 
+    handleOpen, 
+    handleClose,
+    classes 
+}) => {
     return (
         <div className={ classes.root }>
-            <FormControl className={ classes.formControl }>
-                <NativeSelect
-                    value={ filter }
-                    onChange={ onSelect }
-                >
-                    <option value={ filterTypes.WORKOUT_TITLE }>Title</option>
-                    <option value={ filterTypes.BODY_PART }>Body Part</option>
-                </NativeSelect>
-            </FormControl>
+            <IconButton
+                aria-owns={ anchor ? 'menu-filter' : undefined }  
+                aria-haspopup="true"
+                color="inherit"
+                onClick={ handleOpen }
+            >
+                <FilterList />
+            </IconButton>
+            <Menu
+                id='menu-filter' 
+                anchorEl={ anchor }
+                anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
+                open={ anchor ? true : false }
+            >
+                <MenuItem onClick={ e => { onClick( filterTypes.WORKOUT_TITLE ); handleClose() }}>By Title</MenuItem>
+                <MenuItem onClick={ e => { onClick( filterTypes.BODY_PART ); handleClose() }}>By Part</MenuItem>
+            </Menu>
         </div>
     )
 }

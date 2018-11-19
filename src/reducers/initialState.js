@@ -1,5 +1,6 @@
 export default {
     workouts: [],
     query: '',
-    filter: 'WORKOUT_TITLE'
+    filter: 'WORKOUT_TITLE',
+    anchor: null,
 }

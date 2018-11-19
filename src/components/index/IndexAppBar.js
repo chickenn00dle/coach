@@ -7,20 +7,28 @@ import IndexFilter from './IndexFilter'
 import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
-    appBar: {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
+    root: {
+        width: '100%'
     },
     grow: {
         flexGrow: 1,
     }
 })
 
-const IndexAppBar = ({ title, query, filter, onChange, onSelect, classes }) => (
+const IndexAppBar = ({ 
+    title, 
+    query, 
+    filter, 
+    anchor, 
+    onChange, 
+    onClick, 
+    handleOpen,
+    handleClose,
+    classes 
+}) => (
     <AppBar 
         position="static" 
-        className={ classes.appBar }
+        className={ classes.root }
     > 
         <Toolbar>
             <Typography
@@ -29,16 +37,19 @@ const IndexAppBar = ({ title, query, filter, onChange, onSelect, classes }) => (
             >
                 { title }
             </Typography>
+            <div className={ classes.grow } />
+            <IndexSearch 
+                query={ query }
+                onChange={ onChange }
+            />
+            <IndexFilter
+                filter={ filter } 
+                anchor={ anchor }
+                onClick={ onClick }
+                handleOpen={ handleOpen }
+                handleClose={ handleClose }
+            />
         </Toolbar>
-        <div className={ classes.grow } />
-        <IndexSearch 
-            query={ query }
-            onChange={ onChange }
-        />
-        <IndexFilter
-            filter={ filter } 
-            onSelect={ onSelect } 
-        />
     </AppBar>
 )
 
