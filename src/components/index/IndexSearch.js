@@ -53,7 +53,7 @@ const IndexSearch = ({
     onChange, 
     classes 
 }) => { 
-    const placeholder = filter == 'WORKOUT_TITLE' ? 'Workout Title' : 'Body Part'
+    const placeholder = filter === 'WORKOUT_TITLE' ? 'Workout Title' : 'Body Part'
     return (
         <div className={ classes.searchBar }>
             <div className={ classes.searchIcon }>

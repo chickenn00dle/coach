@@ -8,7 +8,10 @@ const theme = createMuiTheme({
         primary: primaryColor,
         secondary: secondaryColor,
         accent: secondaryColor,
-    })
+    }),
+    typography: {
+        useNextVariants: true,
+    },
 })
 
 export default theme

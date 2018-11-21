@@ -7,8 +7,18 @@ import IndexFilter from './IndexFilter'
 import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
+
     root: {
-        width: '100%'
+        width: '100%',
+    },
+    toolbar: {
+        paddingLeft: theme.spacing.unit * 3,
+        paddingRight: theme.spacing.unit * 3,
+        [theme.breakpoints.up(1200 + theme.spacing.unit * 3 * 2)]: {
+            width: 1200,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+        },
     },
     grow: {
         flexGrow: 1,
@@ -30,7 +40,7 @@ const IndexAppBar = ({
         position="static" 
         className={ classes.root }
     > 
-        <Toolbar>
+        <Toolbar className={ classes.toolbar }>
             <Typography
                 variant="h5" 
                 color="inherit"
