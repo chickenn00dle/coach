@@ -15,11 +15,8 @@ const styles = theme => ({
         paddingLeft: theme.spacing.unit * 2,
         paddingRight: theme.spacing.unit * 2,
         [theme.breakpoints.up(1200 + theme.spacing.unit * 3 * 2)]: {
-            paddingLeft: theme.spacing.unit * 3,
-            paddingRight: theme.spacing.unit * 3,
             width: 1200,
-            marginLeft: 'auto',
-            marginRight: 'auto',
+            margin: 'auto',
         },
     },
     grow: {

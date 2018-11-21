@@ -23,7 +23,7 @@ const WorkoutIndex = ({ workouts, classes }) => (
     <div className={ classes.root }>
         <Grid 
             container 
-            spacing={ 30 }
+            spacing={ 16 }
             className={ classes.cardGrid }
         >
             { workouts.map(workout => (

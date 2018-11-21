@@ -11,14 +11,8 @@ const styles = theme => ({
     card: {
         display: 'flex',
         flexDirection: 'column',
-        marginTop: theme.spacing.unit,
-        marginBottom: theme.spacing.unit,
-        [theme.breakpoints.up(600)]: {
-            margin: theme.spacing.unit,
-        },
     },
     cardContent: {
-        height: 'auto',
         flexGrow: 1,
     },
     title: {
