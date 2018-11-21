@@ -11,23 +11,33 @@ const styles = theme => ({
     card: {
         display: 'flex',
         flexDirection: 'column',
-        margin: theme.spacing.unit,
+        marginTop: theme.spacing.unit,
+        marginBottom: theme.spacing.unit,
+        [theme.breakpoints.up(600)]: {
+            margin: theme.spacing.unit,
+        },
+    },
+    cardContent: {
+        height: 'auto',
+        flexGrow: 1,
     },
     title: {
         fontSize: 14,
     },
-    cardContent: {
-        flexGrow: 1,
+    cardActions: {
+        marginTop: 'auto',
+    },
+    link: {
+        textDecoration: 'none',
     },
     button: {
         fontWeight: 700,
-        marginTop: 'auto',
     },
 })
 
 const WorkoutCard = ({ workout, classes }) => ( 
     <Card className={ classes.card }>
-        <CardContent>
+        <CardContent className={ classes.cardContent }>
             <Typography color="textSecondary">
                 { workout.bodyParts.map( part => `${ part.fields.bodyParts } ` ) }
             </Typography>
@@ -35,12 +45,14 @@ const WorkoutCard = ({ workout, classes }) => (
                 { workout.workoutTitle }
             </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions className={ classes.cardActions }>
             <Link
+                className={ classes.link }
                 to={ `/workout/${ workout.id }` }
             >
                 <Button 
                     size="small"
+                    color="secondary"
                     className={ classes.button } 
                 >Details</Button>
             </Link>

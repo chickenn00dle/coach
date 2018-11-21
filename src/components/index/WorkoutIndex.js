@@ -14,6 +14,7 @@ const styles = theme => ({
     },
     cardGrid: {
         display: 'flex',
+        alignItems: 'stretch',
         alignContent: 'stretch',
     }
 })
@@ -29,9 +30,9 @@ const WorkoutIndex = ({ workouts, classes }) => (
                 <Grid 
                     item 
                     key={ workout.id }
+                    xs={ 12 }
                     sm={ 6 }
                     md={ 4 }
-                    lg={ 3 }
                 >
                     <WorkoutCard
                         workout={ workout }
