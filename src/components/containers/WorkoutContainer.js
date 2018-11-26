@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Button from '../common/Button'
+import WorkoutAppBar from '../workout/WorkoutAppBar'
 import Workout from '../workout/Workout'
 
 const mapStateToProps = ( state, ownProps ) => {
@@ -12,9 +13,9 @@ const mapStateToProps = ( state, ownProps ) => {
 
 const WorkoutContainer = ({ workout }) => (
     <div>
-        <Button
-            to='/'
-            text='<<<'
+        <WorkoutAppBar
+            to="/"
+            title={ workout.workoutTitle }
         />
         <Workout
             workout={ workout }
