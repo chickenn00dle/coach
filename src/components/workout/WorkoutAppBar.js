@@ -8,14 +8,32 @@ import ChevronLeft from '@material-ui/icons/ChevronLeft'
 import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
+    root: {
+        width: '100%',
+    },
+    toolbar: {
+        paddingLeft: theme.spacing.unit * 2,
+        paddingRight: theme.spacing.unit * 2,
+        [theme.breakpoints.up(1200 + theme.spacing.unit * 3 * 2)]: {
+            width: 1200,
+            margin: 'auto',
+        },
+    },
     link: {
         color: theme.palette.primary[50],
-    }
+        marginBottom: theme.spacing.unit * -.5,
+    },
 })
 
 const WorkoutAppBar = ({ to, title, classes }) => (
-    <AppBar position="static">
-        <Toolbar variant="dense">
+    <AppBar 
+        position="static"
+        className={ classes.root } 
+    >
+        <Toolbar 
+            variant="dense"
+            className={ classes.toolbar } 
+        >
             <IconButton>
                 <Link 
                     to={ to } 
