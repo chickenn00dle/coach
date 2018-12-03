@@ -6,18 +6,17 @@ import Markdown from './Markdown'
 
 const styles = theme => ({
     root: {
-        paddingLeft: theme.spacing.unit * 2,
-        paddingRight: theme.spacing.unit * 2,
+        paddingLeft: theme.spacing.unit * 3,
+        paddingRight: theme.spacing.unit * 3,
         paddingTop: theme.spacing.unit * 3,
         paddingBottom: theme.spacing.unit * 3,
-        [theme.breakpoints.up(1200 + theme.spacing.unit * 3 * 2)]: {
+        [theme.breakpoints.up(1200 + theme.spacing.unit * 2 * 2)]: {
             width: 1200,
             marginLeft: 'auto',
             marginRight: 'auto',
         },
     },
     frame: {
-        width: '100%',
         marginBottom: theme.spacing.unit * 3,
     },
 })
@@ -30,7 +29,7 @@ const Workout = ({ workout, classes }) => {
                 spacing={ 16 }
                 direction="column"
                 justify="center"
-                alignItems="center"
+                alignItems="flex-start"
             >
                 <Frame 
                     title={ workout.workoutTitle }
