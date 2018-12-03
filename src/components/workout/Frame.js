@@ -7,6 +7,7 @@ const styles = theme => ({
         position: 'relative',
         paddingTop: '56.5%',
         overflow: 'hidden',
+        marginBottom: theme.spacing.unit * 2,
     },
     iframe: {
         position: 'absolute',

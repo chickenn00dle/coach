@@ -1,27 +1,29 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { withStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
+import Paper from '@material-ui/core/Paper'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 import Frame from './Frame'
 import Markdown from './Markdown'
 
 const styles = theme => ({
     root: {
-        paddingLeft: theme.spacing.unit * 3,
-        paddingRight: theme.spacing.unit * 3,
-        paddingTop: theme.spacing.unit * 3,
-        paddingBottom: theme.spacing.unit * 3,
+        padding: theme.spacing.unit * 3,
         [theme.breakpoints.up(1200 + theme.spacing.unit * 2 * 2)]: {
             width: 1200,
             marginLeft: 'auto',
             marginRight: 'auto',
         },
     },
-    frame: {
-        marginBottom: theme.spacing.unit * 3,
+    tabs: {
+        width: '100%',
     },
 })
 
 const Workout = ({ workout, classes }) => {
+    const value = 0
     return (
         <div className={ classes.root }>
             <Grid
@@ -36,10 +38,26 @@ const Workout = ({ workout, classes }) => {
                     exampleURL={ workout.exampleURL } 
                     className={ classes.frame }
                 />
-                <Markdown text={ workout.description } />
+                <Paper 
+                    className={ classes.tabs }    
+                    square
+                >
+                    <Tabs 
+                        value={ value }
+                        textColor="primary"
+                        indicatorColor="primary"
+                        fullWidth
+                    >
+                        <Tab label="Description" />
+                        <Tab label="More" disabled />
+                    </Tabs>
+                    { value === 0 &&
+                        <Markdown text={ workout.description } />
+                    }
+                </Paper>
             </Grid>
         </div>
     )
 }
 
-export default withStyles( styles)( Workout )
+export default withStyles( styles )( Workout )
