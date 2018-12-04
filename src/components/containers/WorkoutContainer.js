@@ -6,7 +6,7 @@ import Workout from '../workout/Workout'
 const mapStateToProps = ( state, ownProps ) => {
     const ID = parseInt( ownProps.match.params.id, 10 )
     return {
-        workout: state.workouts.find( workout => parseInt( workout.id, 10 ) === parseInt( ID, 10 ))
+        workout: state.workouts.find( workout => parseInt( workout.id, 10 ) === ID)
     }
 }
 
