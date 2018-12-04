@@ -17,8 +17,9 @@ const styles = theme => ({
             marginRight: 'auto',
         },
     },
-    tabs: {
+    details: {
         width: '100%',
+        paddingRight: theme.spacing.unit,
     },
 })
 
@@ -39,7 +40,7 @@ const Workout = ({ workout, classes }) => {
                     className={ classes.frame }
                 />
                 <Paper 
-                    className={ classes.tabs }    
+                    className={ classes.details }    
                     square
                 >
                     <Tabs 
