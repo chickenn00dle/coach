@@ -3,9 +3,13 @@ import RootReducer from './reducers/RootReducer'
 import thunk from 'redux-thunk'
 import logger from './middleware/Logger' 
 import { FetchWorkouts } from './actions/FetchActions'
+import { loadState } from './localStorage'
+
+const state = loadState()
 
 const store = createStore(
     RootReducer,
+    state,
     applyMiddleware( thunk, logger )
 );
 
