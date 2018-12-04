@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Button from '../common/Button'
 import WorkoutAppBar from '../workout/WorkoutAppBar'
 import Workout from '../workout/Workout'
 
