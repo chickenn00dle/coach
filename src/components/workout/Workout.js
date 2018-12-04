@@ -40,7 +40,6 @@ const Workout = ({ workout, classes }) => {
                 />
                 <Paper 
                     className={ classes.details }    
-                    square
                 >
                     <Tabs 
                         value={ value }
