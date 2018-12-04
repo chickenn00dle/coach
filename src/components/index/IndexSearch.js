@@ -23,6 +23,7 @@ const styles = theme => ({
         width: theme.spacing.unit * 9,
         height: '100%',
         position: 'absolute',
+        left: - theme.spacing.unit * 2,
         pointerEvents: 'none',
         display: 'flex',
         alignItems: 'center',
@@ -36,10 +37,15 @@ const styles = theme => ({
         paddingTop: theme.spacing.unit,
         paddingRight: theme.spacing.unit,
         paddingBottom: theme.spacing.unit,
-        paddingLeft: theme.spacing.unit * 10,
+        paddingLeft: theme.spacing.unit * 5,
         transition: theme.transitions.create('width'),
-        width: 120,
+        width: 100,
+        '&:focus': {
+            width: 120,
+        },
         [theme.breakpoints.up('sm')]: {
+            paddingLeft: theme.spacing.unit * 6,
+            width: 120,
             '&:focus': {
                 width: 200,
             },

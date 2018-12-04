@@ -9,6 +9,4 @@ const store = createStore(
     applyMiddleware( thunk, logger )
 );
 
-store.dispatch( FetchWorkouts() )
-
 export default store
