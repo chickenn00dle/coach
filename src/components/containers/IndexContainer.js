@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import WorkoutIndex from '../index/WorkoutIndex'
 import { filterTypes } from '../../actions/Actions'
+import Loading from '../common/Loading'
+import WorkoutIndex from '../index/WorkoutIndex'
 import SetFilterType from '../../actions/FilterTypeActions'
 import SetAnchor from '../../actions/AnchorActions'
 import UpdateSearchQuery from '../../actions/SearchActions'
@@ -28,6 +29,7 @@ const filterWorkouts = ( allWorkouts, searchQuery, searchFilter ) => {
 const mapStateToProps = ( state ) => {
     return {
         workouts: filterWorkouts(state.workouts, state.query, state.filter),
+        loading: state.loading,
         filter: state.filter,
         anchor: state.anchor,
     }
@@ -52,7 +54,12 @@ const IndexContainer = ({ classes, ...props }) => (
             handleOpen={ props.handleOpen }
             handleClose={ props.handleClose }
         />
-        <WorkoutIndex workouts={ props.workouts } />
+        { props.loading && 
+            <WorkoutIndex workouts={ props.workouts } />
+        }
+        { ! props.loading && 
+            <Loading />
+        }
     </div>
 )
 

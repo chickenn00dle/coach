@@ -6,9 +6,9 @@ export const FetchWorkouts = () => {
     const serializedState = loadState()
     if ( serializedState ) {
         return dispatch => {
-            dispatch( FetchWorkoutsSuccess( serializedState ) )
+            FetchWorkoutsSuccess( serializedState )
             dispatch( FetchWorkoutsComplete( true ) )
-        } 
+        }
     } else {
         return dispatch => {
             return api.getEntries({
@@ -16,7 +16,7 @@ export const FetchWorkouts = () => {
             }).then( workouts => {
                 dispatch( FetchWorkoutsSuccess( workouts.items.map(
                     item => item.fields 
-                )))
+                ) ) )
                 dispatch( FetchWorkoutsComplete( true ) )
             })
             .catch( err => {

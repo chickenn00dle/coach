@@ -8,6 +8,11 @@ const styles = theme => ({
         paddingTop: '56.5%',
         overflow: 'hidden',
         marginBottom: theme.spacing.unit * 2,
+        backgroundColor: theme.palette.primary[ 900 ],
+        borderRadius: '5px',
+        boxShadow: `0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+                    0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+                    0px 3px 1px -2px rgba(0, 0, 0, 0.12)`
     },
     iframe: {
         position: 'absolute',
