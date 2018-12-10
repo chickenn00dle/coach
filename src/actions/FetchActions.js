@@ -23,10 +23,7 @@ export const FetchWorkouts = () => {
     }
 }
 
-export const FetchWorkoutsSuccess = workouts => {
-    return { 
-        type: FETCH_WORKOUTS_SUCCESS,
-        workouts
-    }
-}
-
+export const FetchWorkoutsSuccess = workouts => ({ 
+    type: FETCH_WORKOUTS_SUCCESS,
+    workouts
+})

@@ -7,11 +7,9 @@ import ShareContainer from './containers/ShareContainer'
 import RoutineContainer from './containers/RoutineContainer'
 import store from '../store'
 import { FetchWorkouts } from '../actions/FetchActions'
-// Material
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 class App extends Component {
-
     componentDidMount() {
         store.dispatch( FetchWorkouts() )
     }
@@ -28,8 +26,8 @@ class App extends Component {
                     <Route path='/routine' component={ RoutineContainer } />
                 </Switch>
             </React.Fragment>
-        );
-      }
+        )
+    }
 }
 
 export default App
