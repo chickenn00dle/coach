@@ -26,7 +26,11 @@ const WorkoutIndex = ({ workouts, classes }) => (
             spacing={ 16 }
             className={ classes.cardGrid }
         >
-            { workouts.map(workout => (
+            { workouts.sort(
+                (a, b) => {
+                    return a.workoutTitle < b.workoutTitle ? -1 : 1
+                }
+            ).map(workout => (
                 <Grid 
                     item 
                     key={ workout.id }
