@@ -17,6 +17,7 @@ export const FetchWorkouts = () => {
                 dispatch( FetchWorkoutsSuccess( workouts.items.map(
                     item => ( {
                         ...item.fields,
+                        selected: false,
                         circuit: 1,
                         reps: 10,
                         weight: 0,
