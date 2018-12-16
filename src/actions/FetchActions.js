@@ -15,7 +15,12 @@ export const FetchWorkouts = () => {
                 content_type: 'workout'
             }).then( workouts => {
                 dispatch( FetchWorkoutsSuccess( workouts.items.map(
-                    item => item.fields 
+                    item => ( {
+                        ...item.fields,
+                        circuit: 1,
+                        reps: 10,
+                        weight: 0,
+                    } )
                 ) ) )
                 dispatch( FetchWorkoutsComplete( true ) )
             })
