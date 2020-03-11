@@ -11,6 +11,7 @@ const styles = () => ({
     card: {
         display: 'flex',
         flexDirection: 'column',
+        margin: 10,
     },
     cardContent: {
         flexGrow: 1,
