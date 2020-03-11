@@ -42,7 +42,7 @@ const mapDispatchToProps = ( dispatch ) => ({
     handleClose: () => dispatch( SetAnchor ( null ) ),
 })
 
-const IndexContainer = ({ classes, ...props }) => (
+const IndexContainer = ( props ) => (
     <div> 
         <IndexAppBar 
             title={ process.env.REACT_APP_NAME }

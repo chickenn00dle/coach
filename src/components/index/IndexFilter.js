@@ -6,14 +6,13 @@ import FilterList from '@material-ui/icons/FilterList'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 
-const styles = theme => ({
+const styles = () => ({
     root: {
         width: 'auto',
     }
 })
 
 const IndexFilter = ({ 
-    filter, 
     anchor, 
     onClick, 
     handleOpen, 
@@ -39,8 +38,8 @@ const IndexFilter = ({
                 }}
                 open={ anchor ? true : false }
             >
-                <MenuItem onClick={ e => { onClick( filterTypes.WORKOUT_TITLE ); handleClose() }}>By Title</MenuItem>
-                <MenuItem onClick={ e => { onClick( filterTypes.BODY_PART ); handleClose() }}>By Part</MenuItem>
+                <MenuItem onClick={ () => { onClick( filterTypes.WORKOUT_TITLE ); handleClose() }}>By Title</MenuItem>
+                <MenuItem onClick={ () => { onClick( filterTypes.BODY_PART ); handleClose() }}>By Part</MenuItem>
             </Menu>
         </div>
     )

@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */ 
 // In production, we register a service worker to serve assets from local cache.
 
 // This lets the app load faster on subsequent visits in production, and gives
@@ -42,7 +43,7 @@ export default function register() {
           console.log(
             'This web app is being served cache-first by a service ' +
               'worker. To learn more, visit https://goo.gl/SC7cgQ'
-          );
+          ); 
         });
       } else {
         // Is not local host. Just register service worker

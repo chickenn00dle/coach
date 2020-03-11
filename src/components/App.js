@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Switch, Route } from 'react-router-dom'
 import IndexContainer from './containers/IndexContainer'
 import WorkoutContainer from './containers/WorkoutContainer'
@@ -29,5 +30,9 @@ class App extends Component {
         )
     }
 }
+
+App.propTypes = {
+    children: PropTypes.node,
+};
 
 export default App
